@@ -1,15 +1,15 @@
 Zomato Food Delivery Data Analysis (SQL)
-📌 Overview
+Overview
 
 This project showcases advanced SQL-based analysis on a food delivery dataset inspired by Zomato. It focuses on solving real-world business problems such as customer segmentation, revenue analysis, delivery performance, and demand patterns.
 
 The project demonstrates strong capabilities in data cleaning, transformation, and analytical problem-solving using SQL.
 
-🛠️ Tech Stack
+ Tech Stack
 SQL (PostgreSQL)
 Excel (for data preprocessing)
 Data Modeling & Query Optimization
-📂 Project Structure
+Project Structure
 Database Setup → Created relational schema (customers, orders, riders, restaurants, deliveries)
 Data Cleaning → Handled null values and ensured data consistency
 Business Analysis → Solved 20 real-world business problems using SQL
