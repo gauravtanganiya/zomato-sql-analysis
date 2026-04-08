@@ -1,59 +1,72 @@
-Zomato Food Delivery Data Analysis (SQL)
-Overview
+Zomato Food Delivery Analytics (SQL Project)
+Project Overview
 
-This project showcases advanced SQL-based analysis on a food delivery dataset inspired by Zomato. It focuses on solving real-world business problems such as customer segmentation, revenue analysis, delivery performance, and demand patterns.
+This project analyzes a Zomato food delivery dataset using SQL to generate business insights related to customer behavior, restaurant performance, and delivery efficiency. The analysis focuses on transforming raw transactional data into actionable insights that can support data-driven decision-making.
 
-The project demonstrates strong capabilities in data cleaning, transformation, and analytical problem-solving using SQL.
+Objectives
+Analyze customer ordering patterns and spending behavior
+Identify top-performing restaurants and popular cuisines
+Evaluate delivery performance across different locations
+Understand revenue trends and peak order periods
+Tools and Technologies
+SQL (MySQL / PostgreSQL)
+Relational Database Management System
+CSV Dataset
+Dataset Description
 
- Tech Stack
-SQL (PostgreSQL)
-Excel (for data preprocessing)
-Data Modeling & Query Optimization
-Project Structure
-Database Setup → Created relational schema (customers, orders, riders, restaurants, deliveries)
-Data Cleaning → Handled null values and ensured data consistency
-Business Analysis → Solved 20 real-world business problems using SQL
-📊 Key Insights & Analysis
-🔹 Customer Analytics
-Identified high-value customers (>₹100K spend)
-Calculated Customer Lifetime Value (CLV)
-Segmented customers into Gold vs Silver categories
-🔹 Revenue & Growth
-Built Monthly & Yearly Growth Trends (MoM / YoY)
-Ranked restaurants based on revenue performance
-Analyzed city-wise revenue contribution
-🔹 Operations Analysis
-Measured delivery time efficiency
-Evaluated cancellation rates across years
-Identified orders without successful delivery
-🔹 Demand & Behavior
-Identified peak-hour demand slots
-Analyzed popular dishes by city
-Studied seasonal demand trends
-⚡ Advanced SQL Concepts Used
-Window Functions → LAG(), RANK(), DENSE_RANK()
-Aggregations & Grouping
-Common Table Expressions (CTEs)
-Joins (INNER, LEFT)
-Date & Time Functions
-Case-based Segmentation
-📈 Sample Business Problems Solved
-Top ordered dishes by customers
-Peak order time slots
-Customer churn analysis
-Rider performance & ratings
-Monthly growth ratio of restaurants
-🚀 Key Impact
-Processed and analyzed 50,000+ records
-Built a scalable SQL framework for business analytics
-Generated actionable insights for revenue and operations optimization
-📌 Conclusion
+The dataset consists of multiple tables capturing different aspects of the food delivery process:
 
-This project reflects my ability to:
+Customers: Customer details and identifiers
+Orders: Order-level transaction data
+Restaurants: Restaurant information and cuisine types
+Order Items: Item-level details for each order
+Delivery: Delivery time and status information
+Key Business Questions
+Customer Analysis
+Who are the top customers based on total order value?
+What is the average order value per customer?
+Restaurant Analysis
+Which restaurants generate the highest revenue?
+Which cuisines are most frequently ordered?
+Delivery Performance
+What is the average delivery time?
+Which locations have the fastest and slowest deliveries?
+Revenue Insights
+What is the total revenue generated?
+How does revenue vary over time?
+What are the peak ordering hours?
+Database Schema
 
-Work with structured datasets
-Solve real-world business problems using SQL
-Extract meaningful insights for decision-making
-⚠️ Disclaimer
+The project uses the following core tables:
 
-All data used in this project is synthetic and generated for learning purposes. It does not represent actual Zomato data.
+customers
+orders
+Sample Queries
+
+Top 5 Restaurants by Revenue
+SELECT r.restaurant_name, SUM(o.order_amount) AS revenue
+FROM orders o
+JOIN restaurants r ON o.restaurant_id = r.restaurant_id
+GROUP BY r.restaurant_name
+ORDER BY revenue DESC
+LIMIT 5;
+Average Delivery Time
+SELECT AVG(delivery_time) AS avg_delivery_time
+FROM delivery;
+Most Popular Cuisine
+SELECT r.cuisine, COUNT(*) AS total_orders
+FROM restaurants r
+JOIN orders o ON r.restaurant_id = o.restaurant_id
+GROUP BY r.cuisine
+ORDER BY total_orders DESC;
+Key Insights
+A small set of restaurants contributes a significant portion of total revenue
+Customer demand peaks during evening hours
+Certain cuisines consistently dominate order volumes
+Delivery time plays a critical role in customer satisfaction
+Conclusion
+
+This project demonstrates the application of SQL for analyzing real-world business data. It highlights how structured querying can uncover patterns, improve operational efficiency, and support strategic decision-making in the food delivery industry.
+restaurants
+order_items
+delivery
